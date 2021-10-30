@@ -1,0 +1,165 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.9.7 on win32)" generated="20211026 22:37:44.694" rpa="false" schemaversion="2">
+<suite id="s1" name="Argumentos" source="C:\Projects\Prime\PrimeExperts_25_10_21\prime_experts_turma_4\argumentos">
+<suite id="s1-s1" name="Test Argumentos" source="C:\Projects\Prime\PrimeExperts_25_10_21\prime_experts_turma_4\argumentos\test_argumentos.robot">
+<test id="s1-s1-t1" name="Cenario: criando email por argumentos embutidos">
+<kw name="Dado que eu recebo o nome &quot;augusto&quot; sobrenome &quot;vieira&quot; e a idade &quot;28&quot;" library="resource" sourcename="Dado que eu recebo o nome &quot;${nome}&quot; sobrenome &quot;${sobrenome}&quot; e a idade &quot;${idade}&quot;">
+<msg timestamp="20211026 22:37:44.726" level="TRACE">Arguments: [ ${nome}='augusto' | ${sobrenome}='vieira' | ${idade}='28' ]</msg>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${nome_email}</arg>
+<arg>${nome}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20211026 22:37:44.726" level="TRACE">Arguments: [ '${nome_email}' | '${nome}' ]</msg>
+<msg timestamp="20211026 22:37:44.727" level="INFO">${nome_email} = augusto</msg>
+<msg timestamp="20211026 22:37:44.727" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211026 22:37:44.726" endtime="20211026 22:37:44.727"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${sobrenome_email}</arg>
+<arg>${sobrenome}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20211026 22:37:44.727" level="TRACE">Arguments: [ '${sobrenome_email}' | '${sobrenome}' ]</msg>
+<msg timestamp="20211026 22:37:44.727" level="INFO">${sobrenome_email} = vieira</msg>
+<msg timestamp="20211026 22:37:44.727" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211026 22:37:44.727" endtime="20211026 22:37:44.727"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${idade_email}</arg>
+<arg>${idade}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20211026 22:37:44.727" level="TRACE">Arguments: [ '${idade_email}' | '${idade}' ]</msg>
+<msg timestamp="20211026 22:37:44.728" level="INFO">${idade_email} = 28</msg>
+<msg timestamp="20211026 22:37:44.728" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211026 22:37:44.727" endtime="20211026 22:37:44.728"/>
+</kw>
+<msg timestamp="20211026 22:37:44.728" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211026 22:37:44.725" endtime="20211026 22:37:44.728"/>
+</kw>
+<kw name="Quando monto o meu email" library="resource">
+<msg timestamp="20211026 22:37:44.728" level="TRACE">Arguments: [  ]</msg>
+<kw name="Catenate" library="BuiltIn">
+<var>${email}</var>
+<arg>${nome_email}_${sobrenome_email}_${idade_email}${prefixo_email}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20211026 22:37:44.729" level="TRACE">Arguments: [ 'augusto_vieira_28@robot.com' ]</msg>
+<msg timestamp="20211026 22:37:44.729" level="TRACE">Return: 'augusto_vieira_28@robot.com'</msg>
+<msg timestamp="20211026 22:37:44.729" level="INFO">${email} = augusto_vieira_28@robot.com</msg>
+<status status="PASS" starttime="20211026 22:37:44.728" endtime="20211026 22:37:44.729"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${email_pronto}</arg>
+<arg>${email}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20211026 22:37:44.729" level="TRACE">Arguments: [ '${email_pronto}' | '${email}' ]</msg>
+<msg timestamp="20211026 22:37:44.729" level="INFO">${email_pronto} = augusto_vieira_28@robot.com</msg>
+<msg timestamp="20211026 22:37:44.729" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211026 22:37:44.729" endtime="20211026 22:37:44.729"/>
+</kw>
+<msg timestamp="20211026 22:37:44.730" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211026 22:37:44.728" endtime="20211026 22:37:44.730"/>
+</kw>
+<kw name="Então imprimo o meu novo email" library="resource">
+<msg timestamp="20211026 22:37:44.730" level="TRACE">Arguments: [  ]</msg>
+<kw name="Log To Console" library="BuiltIn">
+<arg>\n\n Bem vindo ao mundo Robot, este é seu novo email: ${email_pronto}!!\n</arg>
+<doc>Logs the given message to the console.</doc>
+<msg timestamp="20211026 22:37:44.730" level="TRACE">Arguments: [ '\n\n Bem vindo ao mundo Robot, este é seu novo email: augusto_vieira_28@robot.com!!\n' ]</msg>
+<msg timestamp="20211026 22:37:44.731" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211026 22:37:44.730" endtime="20211026 22:37:44.731"/>
+</kw>
+<msg timestamp="20211026 22:37:44.731" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211026 22:37:44.730" endtime="20211026 22:37:44.731"/>
+</kw>
+<status status="PASS" starttime="20211026 22:37:44.725" endtime="20211026 22:37:44.731"/>
+</test>
+<test id="s1-s1-t2" name="Cenario: criando email por argumentos">
+<kw name="Dado que eu recebo" library="resource">
+<arg>sobrenome=vieira</arg>
+<arg>idade=28</arg>
+<arg>nome=augusto</arg>
+<msg timestamp="20211026 22:37:44.733" level="TRACE">Arguments: [ ${nome}='augusto' | ${sobrenome}='vieira' | ${idade}='28' ]</msg>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${nome_email}</arg>
+<arg>${nome}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20211026 22:37:44.733" level="TRACE">Arguments: [ '${nome_email}' | '${nome}' ]</msg>
+<msg timestamp="20211026 22:37:44.733" level="INFO">${nome_email} = augusto</msg>
+<msg timestamp="20211026 22:37:44.733" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211026 22:37:44.733" endtime="20211026 22:37:44.733"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${sobrenome_email}</arg>
+<arg>${sobrenome}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20211026 22:37:44.734" level="TRACE">Arguments: [ '${sobrenome_email}' | '${sobrenome}' ]</msg>
+<msg timestamp="20211026 22:37:44.734" level="INFO">${sobrenome_email} = vieira</msg>
+<msg timestamp="20211026 22:37:44.734" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211026 22:37:44.734" endtime="20211026 22:37:44.734"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${idade_email}</arg>
+<arg>${idade}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20211026 22:37:44.734" level="TRACE">Arguments: [ '${idade_email}' | '${idade}' ]</msg>
+<msg timestamp="20211026 22:37:44.734" level="INFO">${idade_email} = 28</msg>
+<msg timestamp="20211026 22:37:44.734" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211026 22:37:44.734" endtime="20211026 22:37:44.734"/>
+</kw>
+<msg timestamp="20211026 22:37:44.734" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211026 22:37:44.733" endtime="20211026 22:37:44.735"/>
+</kw>
+<kw name="Quando monto o meu email" library="resource">
+<msg timestamp="20211026 22:37:44.735" level="TRACE">Arguments: [  ]</msg>
+<kw name="Catenate" library="BuiltIn">
+<var>${email}</var>
+<arg>${nome_email}_${sobrenome_email}_${idade_email}${prefixo_email}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20211026 22:37:44.736" level="TRACE">Arguments: [ 'augusto_vieira_28@robot.com' ]</msg>
+<msg timestamp="20211026 22:37:44.736" level="TRACE">Return: 'augusto_vieira_28@robot.com'</msg>
+<msg timestamp="20211026 22:37:44.736" level="INFO">${email} = augusto_vieira_28@robot.com</msg>
+<status status="PASS" starttime="20211026 22:37:44.735" endtime="20211026 22:37:44.736"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${email_pronto}</arg>
+<arg>${email}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20211026 22:37:44.736" level="TRACE">Arguments: [ '${email_pronto}' | '${email}' ]</msg>
+<msg timestamp="20211026 22:37:44.736" level="INFO">${email_pronto} = augusto_vieira_28@robot.com</msg>
+<msg timestamp="20211026 22:37:44.736" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211026 22:37:44.736" endtime="20211026 22:37:44.736"/>
+</kw>
+<msg timestamp="20211026 22:37:44.736" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211026 22:37:44.735" endtime="20211026 22:37:44.736"/>
+</kw>
+<kw name="Então imprimo o meu novo email" library="resource">
+<msg timestamp="20211026 22:37:44.737" level="TRACE">Arguments: [  ]</msg>
+<kw name="Log To Console" library="BuiltIn">
+<arg>\n\n Bem vindo ao mundo Robot, este é seu novo email: ${email_pronto}!!\n</arg>
+<doc>Logs the given message to the console.</doc>
+<msg timestamp="20211026 22:37:44.737" level="TRACE">Arguments: [ '\n\n Bem vindo ao mundo Robot, este é seu novo email: augusto_vieira_28@robot.com!!\n' ]</msg>
+<msg timestamp="20211026 22:37:44.738" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211026 22:37:44.737" endtime="20211026 22:37:44.738"/>
+</kw>
+<msg timestamp="20211026 22:37:44.738" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211026 22:37:44.737" endtime="20211026 22:37:44.739"/>
+</kw>
+<status status="PASS" starttime="20211026 22:37:44.732" endtime="20211026 22:37:44.739"/>
+</test>
+<status status="PASS" starttime="20211026 22:37:44.718" endtime="20211026 22:37:44.740"/>
+</suite>
+<status status="PASS" starttime="20211026 22:37:44.695" endtime="20211026 22:37:44.742"/>
+</suite>
+<statistics>
+<total>
+<stat pass="2" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="2" fail="0" skip="0" id="s1" name="Argumentos">Argumentos</stat>
+<stat pass="2" fail="0" skip="0" id="s1-s1" name="Test Argumentos">Argumentos.Test Argumentos</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

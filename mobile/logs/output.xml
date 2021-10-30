@@ -1,0 +1,387 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.9.7 on win32)" generated="20211029 21:57:53.574" rpa="false" schemaversion="2">
+<suite id="s1" name="Mobile" source="C:\Projects\Prime\PrimeExperts_25_10_21\prime_experts_turma_4\mobile">
+<suite id="s1-s1" name="Teste Mobile" source="C:\Projects\Prime\PrimeExperts_25_10_21\prime_experts_turma_4\mobile\teste_mobile.robot">
+<test id="s1-s1-t1" name="Caso de Teste 01: Pesquisar canal “Adrenaline”">
+<kw name="Abrir o aplicativo no celular" library="resource">
+<msg timestamp="20211029 21:57:53.929" level="TRACE">Arguments: [  ]</msg>
+<kw name="Open Application" library="AppiumLibrary">
+<arg>${url_appium_server}</arg>
+<arg>&amp;{AppiumCapabilities}</arg>
+<doc>Opens a new application to given Appium server.
+Capabilities of appium server, Android and iOS,
+Please check https://github.com/appium/appium/blob/master/docs/en/writing-running-appium/server-args.md
+| *Option*            | *Man.* | *Description*     |
+| remote_url          | Yes    | Appium server url |
+| alias               | no     | alias             |</doc>
+<msg timestamp="20211029 21:57:53.929" level="TRACE">Arguments: [ 'http://localhost:4723/wd/hub' | platformName='Android' | platformVersion='9.0' | deviceName='nexus_5_turma_4' | automationName='UiAutomator2' | appPackage='com.google.android.youtube' | appActivity='com.google.android.apps.youtube.app.WatchWhileActivity' ]</msg>
+<msg timestamp="20211029 21:57:55.960" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session {"capabilities": {"firstMatch": [{"platformName": "Android", "appium:platformVersion": "9.0", "appium:deviceName": "nexus_5_turma_4", "appium:automationName": "UiAutomator2", "appium:appPackage": "com.google.android.youtube", "appium:appActivity": "com.google.android.apps.youtube.app.WatchWhileActivity"}]}, "desiredCapabilities": {"platformName": "Android", "platformVersion": "9.0", "deviceName": "nexus_5_turma_4", "automationName": "UiAutomator2", "appPackage": "com.google.android.youtube", "appActivity": "com.google.android.apps.youtube.app.WatchWhileActivity"}}</msg>
+<msg timestamp="20211029 21:57:55.973" level="DEBUG">Starting new HTTP connection (1): 127.0.0.1:4723</msg>
+<msg timestamp="20211029 21:58:05.961" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session HTTP/1.1" 200 1008</msg>
+<msg timestamp="20211029 21:58:05.961" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:05.963" level="DEBUG">Opened application with session id 6db9d020-89fb-4667-a13f-247c0ecc7b4a</msg>
+<msg timestamp="20211029 21:58:05.963" level="TRACE">Return: 1</msg>
+<status status="PASS" starttime="20211029 21:57:53.929" endtime="20211029 21:58:05.964"/>
+</kw>
+<msg timestamp="20211029 21:58:05.964" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 21:57:53.929" endtime="20211029 21:58:05.964"/>
+</kw>
+<kw name="Buscar o canal “Adrenaline”" library="resource" sourcename="Buscar o canal “${buscar_canal}”">
+<doc>Keyword responsavel por fazer uma busca dentro do youtube app a
+partir de uma string vinda do teste.</doc>
+<msg timestamp="20211029 21:58:05.965" level="TRACE">Arguments: [ ${buscar_canal}='Adrenaline' ]</msg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Home.icone_busca}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20211029 21:58:05.967" level="TRACE">Arguments: [ 'accessibility_id=Search' ]</msg>
+<msg timestamp="20211029 21:58:05.967" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements {"using": "accessibility id", "value": "Search"}</msg>
+<msg timestamp="20211029 21:58:06.992" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20211029 21:58:06.993" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:06.993" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff0000004f/displayed {"id": "00000000-0000-005d-ffff-ffff0000004f"}</msg>
+<msg timestamp="20211029 21:58:07.721" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff0000004f/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20211029 21:58:07.721" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:07.721" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 21:58:05.966" endtime="20211029 21:58:07.721"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Home.icone_busca}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20211029 21:58:07.723" level="TRACE">Arguments: [ 'accessibility_id=Search' ]</msg>
+<msg timestamp="20211029 21:58:07.724" level="INFO">Clicking element 'accessibility_id=Search'.</msg>
+<msg timestamp="20211029 21:58:07.724" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements {"using": "accessibility id", "value": "Search"}</msg>
+<msg timestamp="20211029 21:58:07.770" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20211029 21:58:07.770" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:07.770" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff0000004f/click {"id": "00000000-0000-005d-ffff-ffff0000004f"}</msg>
+<msg timestamp="20211029 21:58:07.797" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff0000004f/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20211029 21:58:07.797" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:07.797" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 21:58:07.722" endtime="20211029 21:58:07.797"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Home.campo_texto_busca}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20211029 21:58:07.799" level="TRACE">Arguments: [ 'search_edit_text' ]</msg>
+<msg timestamp="20211029 21:58:07.799" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements {"using": "id", "value": "search_edit_text"}</msg>
+<msg timestamp="20211029 21:58:07.931" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20211029 21:58:07.932" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:07.932" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff00000052/displayed {"id": "00000000-0000-005d-ffff-ffff00000052"}</msg>
+<msg timestamp="20211029 21:58:08.674" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff00000052/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20211029 21:58:08.674" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:08.674" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 21:58:07.798" endtime="20211029 21:58:08.674"/>
+</kw>
+<kw name="Input Text" library="AppiumLibrary">
+<arg>${Home.campo_texto_busca}</arg>
+<arg>${buscar_canal}</arg>
+<doc>Types the given `text` into text field identified by `locator`.</doc>
+<msg timestamp="20211029 21:58:08.675" level="TRACE">Arguments: [ 'search_edit_text' | 'Adrenaline' ]</msg>
+<msg timestamp="20211029 21:58:08.676" level="INFO">Typing text 'Adrenaline' into text field 'search_edit_text'</msg>
+<msg timestamp="20211029 21:58:08.676" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements {"using": "id", "value": "search_edit_text"}</msg>
+<msg timestamp="20211029 21:58:08.694" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20211029 21:58:08.694" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:08.694" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff00000052/value {"text": "Adrenaline", "value": ["A", "d", "r", "e", "n", "a", "l", "i", "n", "e"], "id": "00000000-0000-005d-ffff-ffff00000052"}</msg>
+<msg timestamp="20211029 21:58:09.344" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff00000052/value HTTP/1.1" 200 14</msg>
+<msg timestamp="20211029 21:58:09.345" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:09.345" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 21:58:08.675" endtime="20211029 21:58:09.345"/>
+</kw>
+<kw name="Press Keycode" library="AppiumLibrary">
+<arg>66</arg>
+<doc>Sends a press of keycode to the device.</doc>
+<msg timestamp="20211029 21:58:09.345" level="TRACE">Arguments: [ '66' ]</msg>
+<msg timestamp="20211029 21:58:09.345" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/appium/device/press_keycode {"keycode": "66"}</msg>
+<msg timestamp="20211029 21:58:10.236" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/appium/device/press_keycode HTTP/1.1" 200 14</msg>
+<msg timestamp="20211029 21:58:10.236" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:10.236" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 21:58:09.345" endtime="20211029 21:58:10.236"/>
+</kw>
+<msg timestamp="20211029 21:58:10.236" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 21:58:05.964" endtime="20211029 21:58:10.237"/>
+</kw>
+<kw name="Selecionar o canal na lista de busca" library="resource">
+<msg timestamp="20211029 21:58:10.237" level="TRACE">Arguments: [  ]</msg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Resultados_busca.canais_sugeridos}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20211029 21:58:10.239" level="TRACE">Arguments: [ 'channel_item' ]</msg>
+<msg timestamp="20211029 21:58:10.239" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements {"using": "id", "value": "channel_item"}</msg>
+<msg timestamp="20211029 21:58:10.902" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20211029 21:58:10.902" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:11.102" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements {"using": "id", "value": "channel_item"}</msg>
+<msg timestamp="20211029 21:58:11.141" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20211029 21:58:11.141" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:11.349" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements {"using": "id", "value": "channel_item"}</msg>
+<msg timestamp="20211029 21:58:11.377" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20211029 21:58:11.377" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:11.581" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements {"using": "id", "value": "channel_item"}</msg>
+<msg timestamp="20211029 21:58:11.617" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20211029 21:58:11.617" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:11.827" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements {"using": "id", "value": "channel_item"}</msg>
+<msg timestamp="20211029 21:58:12.246" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20211029 21:58:12.246" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:12.247" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff00000063/displayed {"id": "00000000-0000-005d-ffff-ffff00000063"}</msg>
+<msg timestamp="20211029 21:58:12.482" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff00000063/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20211029 21:58:12.482" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:12.482" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 21:58:10.238" endtime="20211029 21:58:12.482"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Resultados_busca.canais_sugeridos}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20211029 21:58:12.483" level="TRACE">Arguments: [ 'channel_item' ]</msg>
+<msg timestamp="20211029 21:58:12.484" level="INFO">Clicking element 'channel_item'.</msg>
+<msg timestamp="20211029 21:58:12.484" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements {"using": "id", "value": "channel_item"}</msg>
+<msg timestamp="20211029 21:58:12.530" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20211029 21:58:12.530" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:12.530" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff00000063/click {"id": "00000000-0000-005d-ffff-ffff00000063"}</msg>
+<msg timestamp="20211029 21:58:12.554" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff00000063/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20211029 21:58:12.554" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:12.554" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 21:58:12.482" endtime="20211029 21:58:12.554"/>
+</kw>
+<msg timestamp="20211029 21:58:12.555" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 21:58:10.237" endtime="20211029 21:58:12.555"/>
+</kw>
+<kw name="Navegar pelo menu Playlist" library="resource">
+<msg timestamp="20211029 21:58:12.555" level="TRACE">Arguments: [  ]</msg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Canais.playlist}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20211029 21:58:12.556" level="TRACE">Arguments: [ 'accessibility_id=Playlists' ]</msg>
+<msg timestamp="20211029 21:58:12.556" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements {"using": "accessibility id", "value": "Playlists"}</msg>
+<msg timestamp="20211029 21:58:12.704" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20211029 21:58:12.704" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:12.916" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements {"using": "accessibility id", "value": "Playlists"}</msg>
+<msg timestamp="20211029 21:58:14.054" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20211029 21:58:14.054" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:14.055" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff0000015e/displayed {"id": "00000000-0000-005d-ffff-ffff0000015e"}</msg>
+<msg timestamp="20211029 21:58:14.067" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff0000015e/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20211029 21:58:14.067" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:14.067" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 21:58:12.556" endtime="20211029 21:58:14.067"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Canais.playlist}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20211029 21:58:14.067" level="TRACE">Arguments: [ 'accessibility_id=Playlists' ]</msg>
+<msg timestamp="20211029 21:58:14.069" level="INFO">Clicking element 'accessibility_id=Playlists'.</msg>
+<msg timestamp="20211029 21:58:14.069" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements {"using": "accessibility id", "value": "Playlists"}</msg>
+<msg timestamp="20211029 21:58:14.101" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20211029 21:58:14.102" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:14.102" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff0000015e/click {"id": "00000000-0000-005d-ffff-ffff0000015e"}</msg>
+<msg timestamp="20211029 21:58:14.124" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff0000015e/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20211029 21:58:14.124" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:14.124" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 21:58:14.067" endtime="20211029 21:58:14.125"/>
+</kw>
+<msg timestamp="20211029 21:58:14.125" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 21:58:12.555" endtime="20211029 21:58:14.125"/>
+</kw>
+<kw name="Selecionar a primeira playlist do canal" library="resource">
+<msg timestamp="20211029 21:58:14.126" level="TRACE">Arguments: [  ]</msg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Canais.lista_playlist}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20211029 21:58:14.126" level="TRACE">Arguments: [ 'playlist_item' ]</msg>
+<msg timestamp="20211029 21:58:14.127" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements {"using": "id", "value": "playlist_item"}</msg>
+<msg timestamp="20211029 21:58:14.237" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements HTTP/1.1" 200 12</msg>
+<msg timestamp="20211029 21:58:14.238" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:14.443" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements {"using": "id", "value": "playlist_item"}</msg>
+<msg timestamp="20211029 21:58:15.239" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements HTTP/1.1" 200 651</msg>
+<msg timestamp="20211029 21:58:15.239" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:15.240" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff00000168/displayed {"id": "00000000-0000-005d-ffff-ffff00000168"}</msg>
+<msg timestamp="20211029 21:58:15.252" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff00000168/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20211029 21:58:15.253" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:15.253" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 21:58:14.126" endtime="20211029 21:58:15.253"/>
+</kw>
+<kw name="Get Webelements" library="AppiumLibrary">
+<var>@{lista_playlist}</var>
+<arg>${Canais.lista_playlist}</arg>
+<doc>Returns list of [http://selenium-python.readthedocs.io/api.html#module-selenium.webdriver.remote.webelement|WebElement] objects matching ``locator``.</doc>
+<msg timestamp="20211029 21:58:15.255" level="TRACE">Arguments: [ 'playlist_item' ]</msg>
+<msg timestamp="20211029 21:58:15.255" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements {"using": "id", "value": "playlist_item"}</msg>
+<msg timestamp="20211029 21:58:15.343" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements HTTP/1.1" 200 651</msg>
+<msg timestamp="20211029 21:58:15.343" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:15.344" level="TRACE">Return: [&lt;appium.webdriver.webelement.WebElement (session="6db9d020-89fb-4667-a13f-247c0ecc7b4a", element="00000000-0000-005d-ffff-ffff00000168")&gt;,
+ &lt;appium.webdriver.webelement.WebElement (session="6db9d020-89fb-4667-a13f-247c0ecc7b4a", element="00000000-0000-005d-ffff-ffff00000169")&gt;,
+ &lt;appium.webdriver.webelement.WebElement (session="6db9d020-89fb-4667-a13f-247c0ecc7b4a", element="00000000-0000-005d-ffff-ffff0000016a")&gt;,
+ &lt;appium.webdriver.webelement.WebElement (session="6db9d020-89fb-4667-a13f-247c0ecc7b4a", element="00000000-0000-005d-ffff-ffff0000016b")&gt;,
+ &lt;appium.webdriver.webelement.WebElement (session="6db9d020-89fb-4667-a13f-247c0ecc7b4a", element="00000000-0000-005d-ffff-ffff0000016c")&gt;]</msg>
+<msg timestamp="20211029 21:58:15.344" level="INFO">@{lista_playlist} = [ &lt;appium.webdriver.webelement.WebElement (session="6db9d020-89fb-4667-a13f-247c0ecc7b4a", element="00000000-0000-005d-ffff-ffff00000168")&gt; | &lt;appium.webdriver.webelement.WebElement (session="6db9d020...</msg>
+<status status="PASS" starttime="20211029 21:58:15.254" endtime="20211029 21:58:15.344"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${lista_playlist}[0]</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20211029 21:58:15.344" level="TRACE">Arguments: [ &lt;appium.webdriver.webelement.WebElement (session="6db9d020-89fb-4667-a13f-247c0ecc7b4a", element="00000000-0000-005d-ffff-ffff00000168")&gt; ]</msg>
+<msg timestamp="20211029 21:58:15.346" level="INFO">Clicking element '&lt;appium.webdriver.webelement.WebElement (session="6db9d020-89fb-4667-a13f-247c0ecc7b4a", element="00000000-0000-005d-ffff-ffff00000168")&gt;'.</msg>
+<msg timestamp="20211029 21:58:15.346" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff00000168/click {"id": "00000000-0000-005d-ffff-ffff00000168"}</msg>
+<msg timestamp="20211029 21:58:15.373" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff00000168/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20211029 21:58:15.373" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:15.373" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 21:58:15.344" endtime="20211029 21:58:15.373"/>
+</kw>
+<msg timestamp="20211029 21:58:15.373" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 21:58:14.125" endtime="20211029 21:58:15.373"/>
+</kw>
+<kw name="Navegar por todos os botões da barra de Menus(Home, Explorar...) do YouTube" library="resource">
+<msg timestamp="20211029 21:58:15.374" level="TRACE">Arguments: [  ]</msg>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Home.icone_home}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20211029 21:58:15.376" level="TRACE">Arguments: [ 'accessibility_id=Home' ]</msg>
+<msg timestamp="20211029 21:58:15.376" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements {"using": "accessibility id", "value": "Home"}</msg>
+<msg timestamp="20211029 21:58:15.448" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20211029 21:58:15.448" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:15.448" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff00000003/displayed {"id": "00000000-0000-005d-ffff-ffff00000003"}</msg>
+<msg timestamp="20211029 21:58:16.344" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff00000003/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20211029 21:58:16.345" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:16.345" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 21:58:15.375" endtime="20211029 21:58:16.345"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Home.icone_home}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20211029 21:58:16.346" level="TRACE">Arguments: [ 'accessibility_id=Home' ]</msg>
+<msg timestamp="20211029 21:58:16.347" level="INFO">Clicking element 'accessibility_id=Home'.</msg>
+<msg timestamp="20211029 21:58:16.348" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements {"using": "accessibility id", "value": "Home"}</msg>
+<msg timestamp="20211029 21:58:16.376" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20211029 21:58:16.376" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:16.376" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff00000003/click {"id": "00000000-0000-005d-ffff-ffff00000003"}</msg>
+<msg timestamp="20211029 21:58:16.402" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff00000003/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20211029 21:58:16.402" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:16.402" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 21:58:16.345" endtime="20211029 21:58:16.402"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Home.icone_trending}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20211029 21:58:16.404" level="TRACE">Arguments: [ 'accessibility_id=Trending' ]</msg>
+<msg timestamp="20211029 21:58:16.404" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements {"using": "accessibility id", "value": "Trending"}</msg>
+<msg timestamp="20211029 21:58:16.637" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20211029 21:58:16.637" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:16.637" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff00000012/displayed {"id": "00000000-0000-005d-ffff-ffff00000012"}</msg>
+<msg timestamp="20211029 21:58:17.192" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff00000012/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20211029 21:58:17.192" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:17.193" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 21:58:16.403" endtime="20211029 21:58:17.193"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Home.icone_trending}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20211029 21:58:17.193" level="TRACE">Arguments: [ 'accessibility_id=Trending' ]</msg>
+<msg timestamp="20211029 21:58:17.195" level="INFO">Clicking element 'accessibility_id=Trending'.</msg>
+<msg timestamp="20211029 21:58:17.195" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements {"using": "accessibility id", "value": "Trending"}</msg>
+<msg timestamp="20211029 21:58:17.225" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20211029 21:58:17.225" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:17.225" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff00000012/click {"id": "00000000-0000-005d-ffff-ffff00000012"}</msg>
+<msg timestamp="20211029 21:58:17.253" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff00000012/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20211029 21:58:17.253" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:17.254" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 21:58:17.193" endtime="20211029 21:58:17.254"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Home.icone_subscriptions}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20211029 21:58:17.254" level="TRACE">Arguments: [ 'accessibility_id=Subscriptions' ]</msg>
+<msg timestamp="20211029 21:58:17.254" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements {"using": "accessibility id", "value": "Subscriptions"}</msg>
+<msg timestamp="20211029 21:58:17.318" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20211029 21:58:17.318" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:17.318" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff00000013/displayed {"id": "00000000-0000-005d-ffff-ffff00000013"}</msg>
+<msg timestamp="20211029 21:58:18.309" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff00000013/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20211029 21:58:18.309" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:18.309" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 21:58:17.254" endtime="20211029 21:58:18.309"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Home.icone_subscriptions}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20211029 21:58:18.310" level="TRACE">Arguments: [ 'accessibility_id=Subscriptions' ]</msg>
+<msg timestamp="20211029 21:58:18.311" level="INFO">Clicking element 'accessibility_id=Subscriptions'.</msg>
+<msg timestamp="20211029 21:58:18.311" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements {"using": "accessibility id", "value": "Subscriptions"}</msg>
+<msg timestamp="20211029 21:58:18.342" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20211029 21:58:18.342" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:18.343" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff00000013/click {"id": "00000000-0000-005d-ffff-ffff00000013"}</msg>
+<msg timestamp="20211029 21:58:18.409" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff00000013/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20211029 21:58:18.410" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:18.410" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 21:58:18.309" endtime="20211029 21:58:18.411"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Home.icone_library}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20211029 21:58:18.412" level="TRACE">Arguments: [ 'accessibility_id=Library' ]</msg>
+<msg timestamp="20211029 21:58:18.413" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements {"using": "accessibility id", "value": "Library"}</msg>
+<msg timestamp="20211029 21:58:19.159" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20211029 21:58:19.159" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:19.159" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff00000015/displayed {"id": "00000000-0000-005d-ffff-ffff00000015"}</msg>
+<msg timestamp="20211029 21:58:19.170" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff00000015/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20211029 21:58:19.171" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:19.171" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 21:58:18.411" endtime="20211029 21:58:19.171"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Home.icone_library}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20211029 21:58:19.171" level="TRACE">Arguments: [ 'accessibility_id=Library' ]</msg>
+<msg timestamp="20211029 21:58:19.172" level="INFO">Clicking element 'accessibility_id=Library'.</msg>
+<msg timestamp="20211029 21:58:19.173" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements {"using": "accessibility id", "value": "Library"}</msg>
+<msg timestamp="20211029 21:58:19.193" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20211029 21:58:19.193" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:19.193" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff00000015/click {"id": "00000000-0000-005d-ffff-ffff00000015"}</msg>
+<msg timestamp="20211029 21:58:19.219" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff00000015/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20211029 21:58:19.219" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:19.219" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 21:58:19.171" endtime="20211029 21:58:19.219"/>
+</kw>
+<kw name="Wait Until Element Is Visible" library="AppiumLibrary">
+<arg>${Home.icone_notifications}</arg>
+<doc>Waits until element specified with `locator` is visible.</doc>
+<msg timestamp="20211029 21:58:19.220" level="TRACE">Arguments: [ 'accessibility_id=Notifications' ]</msg>
+<msg timestamp="20211029 21:58:19.220" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements {"using": "accessibility id", "value": "Notifications"}</msg>
+<msg timestamp="20211029 21:58:19.955" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20211029 21:58:19.955" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:19.955" level="DEBUG">GET http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff00000014/displayed {"id": "00000000-0000-005d-ffff-ffff00000014"}</msg>
+<msg timestamp="20211029 21:58:19.965" level="DEBUG">http://127.0.0.1:4723 "GET /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff00000014/displayed HTTP/1.1" 200 14</msg>
+<msg timestamp="20211029 21:58:19.965" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:19.965" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 21:58:19.219" endtime="20211029 21:58:19.965"/>
+</kw>
+<kw name="Click Element" library="AppiumLibrary">
+<arg>${Home.icone_notifications}</arg>
+<doc>Click element identified by `locator`.</doc>
+<msg timestamp="20211029 21:58:19.966" level="TRACE">Arguments: [ 'accessibility_id=Notifications' ]</msg>
+<msg timestamp="20211029 21:58:19.967" level="INFO">Clicking element 'accessibility_id=Notifications'.</msg>
+<msg timestamp="20211029 21:58:19.967" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements {"using": "accessibility id", "value": "Notifications"}</msg>
+<msg timestamp="20211029 21:58:19.988" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/elements HTTP/1.1" 200 139</msg>
+<msg timestamp="20211029 21:58:19.988" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:19.989" level="DEBUG">POST http://127.0.0.1:4723/wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff00000014/click {"id": "00000000-0000-005d-ffff-ffff00000014"}</msg>
+<msg timestamp="20211029 21:58:20.023" level="DEBUG">http://127.0.0.1:4723 "POST /wd/hub/session/6db9d020-89fb-4667-a13f-247c0ecc7b4a/element/00000000-0000-005d-ffff-ffff00000014/click HTTP/1.1" 200 14</msg>
+<msg timestamp="20211029 21:58:20.023" level="DEBUG">Finished Request</msg>
+<msg timestamp="20211029 21:58:20.023" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 21:58:19.966" endtime="20211029 21:58:20.023"/>
+</kw>
+<msg timestamp="20211029 21:58:20.023" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 21:58:15.374" endtime="20211029 21:58:20.023"/>
+</kw>
+<status status="PASS" starttime="20211029 21:57:53.928" endtime="20211029 21:58:20.024"/>
+</test>
+<status status="PASS" starttime="20211029 21:57:53.663" endtime="20211029 21:58:20.025"/>
+</suite>
+<status status="PASS" starttime="20211029 21:57:53.575" endtime="20211029 21:58:20.027"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Mobile">Mobile</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Teste Mobile">Mobile.Teste Mobile</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

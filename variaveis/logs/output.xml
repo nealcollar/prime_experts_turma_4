@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.9.7 on win32)" generated="20211026 21:45:06.063" rpa="false" schemaversion="2">
+<suite id="s1" name="Variaveis" source="C:\Projects\Prime\PrimeExperts_25_10_21\prime_experts_turma_4\variaveis">
+<suite id="s1-s1" name="Test Variavel" source="C:\Projects\Prime\PrimeExperts_25_10_21\prime_experts_turma_4\variaveis\test_variavel.robot">
+<test id="s1-s1-t1" name="Cenario: imprimindo minha lista de frutas">
+<kw name="imprimir lista de lista de frutas" library="resource">
+<msg timestamp="20211026 21:45:06.118" level="TRACE">Arguments: [  ]</msg>
+<kw name="Log To Console" library="BuiltIn">
+<arg>\n\nImprimindo nossa lista de frutas: \n${lista_frutas}\n</arg>
+<doc>Logs the given message to the console.</doc>
+<msg timestamp="20211026 21:45:06.119" level="TRACE">Arguments: [ "\n\nImprimindo nossa lista de frutas: \n['abacaxi', 'morango', 'laranja', 'banana', 'kiwi']\n" ]</msg>
+<msg timestamp="20211026 21:45:06.120" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211026 21:45:06.119" endtime="20211026 21:45:06.120"/>
+</kw>
+<msg timestamp="20211026 21:45:06.121" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211026 21:45:06.117" endtime="20211026 21:45:06.121"/>
+</kw>
+<tag>frutas</tag>
+<status status="PASS" starttime="20211026 21:45:06.116" endtime="20211026 21:45:06.122"/>
+</test>
+<status status="PASS" starttime="20211026 21:45:06.099" endtime="20211026 21:45:06.124"/>
+</suite>
+<status status="PASS" starttime="20211026 21:45:06.065" endtime="20211026 21:45:06.126"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0" skip="0">frutas</stat>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Variaveis">Variaveis</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Test Variavel">Variaveis.Test Variavel</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

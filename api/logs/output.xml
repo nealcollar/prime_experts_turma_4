@@ -1,0 +1,82 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.9.7 on win32)" generated="20211029 23:00:52.416" rpa="false" schemaversion="2">
+<suite id="s1" name="Api" source="C:\Projects\Prime\PrimeExperts_25_10_21\prime_experts_turma_4\api">
+<suite id="s1-s1" name="Teste Api" source="C:\Projects\Prime\PrimeExperts_25_10_21\prime_experts_turma_4\api\teste_api.robot">
+<test id="s1-s1-t1" name="Brincando com APIs">
+<kw name="Criar uma requisição GET para lista de ususarios" library="resource">
+<msg timestamp="20211029 23:00:52.531" level="TRACE">Arguments: [  ]</msg>
+<kw name="Catenate" library="BuiltIn">
+<var>${url_completa}</var>
+<arg>${url}${recurso}${end_point}</arg>
+<doc>Catenates the given items together and returns the resulted string.</doc>
+<msg timestamp="20211029 23:00:52.531" level="TRACE">Arguments: [ 'https://gorest.co.in/public/v1/users/5266' ]</msg>
+<msg timestamp="20211029 23:00:52.531" level="TRACE">Return: 'https://gorest.co.in/public/v1/users/5266'</msg>
+<msg timestamp="20211029 23:00:52.532" level="INFO">${url_completa} = https://gorest.co.in/public/v1/users/5266</msg>
+<status status="PASS" starttime="20211029 23:00:52.531" endtime="20211029 23:00:52.532"/>
+</kw>
+<kw name="GET" library="RequestsLibrary">
+<var>${resposta_get}</var>
+<arg>url=${url_completa}</arg>
+<arg>headers=${Headers}</arg>
+<doc>Sends a GET request.</doc>
+<msg timestamp="20211029 23:00:52.532" level="TRACE">Arguments: [ url='https://gorest.co.in/public/v1/users/5266' | headers={'Accept': 'application/json', 'Content-Type': 'application/json'} ]</msg>
+<msg timestamp="20211029 23:00:52.535" level="DEBUG">Starting new HTTPS connection (1): gorest.co.in:443</msg>
+<msg timestamp="20211029 23:00:54.178" level="DEBUG">https://gorest.co.in:443 "GET /public/v1/users/5266 HTTP/1.1" 200 None</msg>
+<msg timestamp="20211029 23:00:54.180" level="INFO">GET Request : url=https://gorest.co.in/public/v1/users/5266 
+ path_url=/public/v1/users/5266 
+ headers={'User-Agent': 'python-requests/2.26.0', 'Accept-Encoding': 'gzip, deflate', 'Accept': 'application/json', 'Connection': 'keep-alive', 'Content-Type': 'application/json'} 
+ body=None 
+ </msg>
+<msg timestamp="20211029 23:00:54.180" level="INFO">GET Response : url=https://gorest.co.in/public/v1/users/5266 
+ status=200, reason=OK 
+ headers={'Server': 'nginx', 'Date': 'Sat, 30 Oct 2021 02:00:54 GMT', 'Content-Type': 'application/json; charset=utf-8', 'Transfer-Encoding': 'chunked', 'Connection': 'keep-alive', 'Vary': 'Accept-Encoding, Origin', 'X-Frame-Options': 'SAMEORIGIN', 'X-XSS-Protection': '1; mode=block', 'X-Content-Type-Options': 'nosniff', 'X-Download-Options': 'noopen', 'X-Permitted-Cross-Domain-Policies': 'none', 'Referrer-Policy': 'strict-origin-when-cross-origin', 'ETag': 'W/"96b0326999e8c893524d2d113cd252fb"', 'Cache-Control': 'max-age=0, private, must-revalidate', 'X-Request-Id': 'befc4ed7-0150-4944-8033-4fa3e00e9deb', 'X-Runtime': '0.004194', 'Strict-Transport-Security': 'max-age=63072000; includeSubDomains', 'Content-Encoding': 'gzip'} 
+ body={"meta":null,"data":{"id":5266,"name":"API Monitoring:07wcbd","email":"apimonitoring07wcbd@synthetic.com","gender":"male","status":"active"}} 
+ </msg>
+<msg timestamp="20211029 23:00:54.180" level="TRACE">Return: &lt;Response [200]&gt;</msg>
+<msg timestamp="20211029 23:00:54.180" level="INFO">${resposta_get} = &lt;Response [200]&gt;</msg>
+<status status="PASS" starttime="20211029 23:00:52.532" endtime="20211029 23:00:54.181"/>
+</kw>
+<kw name="Set Test Variable" library="BuiltIn">
+<arg>${resposta}</arg>
+<arg>${resposta_get.json()}</arg>
+<doc>Makes a variable available everywhere within the scope of the current test.</doc>
+<msg timestamp="20211029 23:00:54.181" level="TRACE">Arguments: [ '${resposta}' | '${resposta_get.json()}' ]</msg>
+<msg timestamp="20211029 23:00:54.181" level="INFO">${resposta} = {'meta': None, 'data': {'id': 5266, 'name': 'API Monitoring:07wcbd', 'email': 'apimonitoring07wcbd@synthetic.com', 'gender': 'male', 'status': 'active'}}</msg>
+<msg timestamp="20211029 23:00:54.181" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 23:00:54.181" endtime="20211029 23:00:54.181"/>
+</kw>
+<msg timestamp="20211029 23:00:54.181" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 23:00:52.531" endtime="20211029 23:00:54.182"/>
+</kw>
+<kw name="Imprimir a lista de usuarios" library="resource">
+<msg timestamp="20211029 23:00:54.182" level="TRACE">Arguments: [  ]</msg>
+<kw name="Log To Console" library="BuiltIn">
+<arg>\n\n${resposta}\n\n</arg>
+<doc>Logs the given message to the console.</doc>
+<msg timestamp="20211029 23:00:54.182" level="TRACE">Arguments: [ "\n\n{'meta': None, 'data': {'id': 5266, 'name': 'API Monitoring:07wcbd', 'email': 'apimonitoring07wcbd@synthetic.com', 'gender': 'male', 'status': 'active'}}\n\n" ]</msg>
+<msg timestamp="20211029 23:00:54.182" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 23:00:54.182" endtime="20211029 23:00:54.183"/>
+</kw>
+<msg timestamp="20211029 23:00:54.183" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 23:00:54.182" endtime="20211029 23:00:54.183"/>
+</kw>
+<status status="PASS" starttime="20211029 23:00:52.530" endtime="20211029 23:00:54.183"/>
+</test>
+<status status="PASS" starttime="20211029 23:00:52.445" endtime="20211029 23:00:54.184"/>
+</suite>
+<status status="PASS" starttime="20211029 23:00:52.418" endtime="20211029 23:00:54.185"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Api">Api</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Teste Api">Api.Teste Api</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>

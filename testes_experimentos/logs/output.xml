@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.2 (Python 3.9.7 on win32)" generated="20211029 20:07:38.017" rpa="false" schemaversion="2">
+<suite id="s1" name="Testes Experimentos" source="C:\Projects\Prime\PrimeExperts_25_10_21\prime_experts_turma_4\testes_experimentos">
+<suite id="s1-s1" name="Experimento" source="C:\Projects\Prime\PrimeExperts_25_10_21\prime_experts_turma_4\testes_experimentos\experimento.robot">
+<test id="s1-s1-t1" name="Testes">
+<kw name="entendendo variaveis">
+<msg timestamp="20211029 20:07:38.044" level="TRACE">Arguments: [  ]</msg>
+<kw name="Log To Console" library="BuiltIn">
+<arg>vendo como um dicionario é recebido como dicionario: \n\n &amp;{AppiumCapabilities}\n</arg>
+<doc>Logs the given message to the console.</doc>
+<msg timestamp="20211029 20:07:38.045" level="TRACE">Arguments: [ "vendo como um dicionario é recebido como dicionario: \n\n {'platformName': 'Android', 'platformVersion': '9.0', 'deviceName': 'nexus_5_turma_4', 'automationName': 'UiAutomator2', 'appPackage': 'com.google.android.youtube', 'appActivity': 'com.google.android.apps.youtube.app.WatchWhileActivity'}\n" ]</msg>
+<msg timestamp="20211029 20:07:38.045" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 20:07:38.044" endtime="20211029 20:07:38.045"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>vendo como um dicionario é recebido como variavel simples: \n\n ${AppiumCapabilities}\n</arg>
+<doc>Logs the given message to the console.</doc>
+<msg timestamp="20211029 20:07:38.045" level="TRACE">Arguments: [ "vendo como um dicionario é recebido como variavel simples: \n\n {'platformName': 'Android', 'platformVersion': '9.0', 'deviceName': 'nexus_5_turma_4', 'automationName': 'UiAutomator2', 'appPackage': 'com.google.android.youtube', 'appActivity': 'com.google.android.apps.youtube.app.WatchWhileActivity'}\n" ]</msg>
+<msg timestamp="20211029 20:07:38.046" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 20:07:38.045" endtime="20211029 20:07:38.046"/>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<arg>vendo como um é recebido como variavel simples recebendo uma chave especifica de um dicionario: \n\n ${AppiumCapabilities.platformName}\n</arg>
+<doc>Logs the given message to the console.</doc>
+<msg timestamp="20211029 20:07:38.047" level="TRACE">Arguments: [ 'vendo como um é recebido como variavel simples recebendo uma chave especifica de um dicionario: \n\n Android\n' ]</msg>
+<msg timestamp="20211029 20:07:38.047" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 20:07:38.046" endtime="20211029 20:07:38.047"/>
+</kw>
+<msg timestamp="20211029 20:07:38.047" level="TRACE">Return: None</msg>
+<status status="PASS" starttime="20211029 20:07:38.044" endtime="20211029 20:07:38.048"/>
+</kw>
+<status status="PASS" starttime="20211029 20:07:38.043" endtime="20211029 20:07:38.048"/>
+</test>
+<status status="PASS" starttime="20211029 20:07:38.041" endtime="20211029 20:07:38.049"/>
+</suite>
+<status status="PASS" starttime="20211029 20:07:38.018" endtime="20211029 20:07:38.050"/>
+</suite>
+<statistics>
+<total>
+<stat pass="1" fail="0" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="1" fail="0" skip="0" id="s1" name="Testes Experimentos">Testes Experimentos</stat>
+<stat pass="1" fail="0" skip="0" id="s1-s1" name="Experimento">Testes Experimentos.Experimento</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
